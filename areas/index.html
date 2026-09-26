@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>MonegrosBook · Gestión de áreas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/mb.css">
+<style>
+:root{--bg:#0a0b0d;--panel:#121417;--panel2:#171a1e;--ink:#f5f3ee;--sub:#93979c;--hair:rgba(255,255,255,.1);--yel:#FABD12;--green:#33d488;--blue:#7fb8d9}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:18px 16px 40px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.bar-l{display:flex;align-items:center;gap:12px}
+.bar .mb-logo{width:70px;height:34px;border-radius:6px}
+h1{font:800 clamp(20px,3vw,28px)/1 "Barlow Condensed",Arial,sans-serif;text-transform:uppercase;letter-spacing:.02em;margin:0}
+.bar-r{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font:500 11px "IBM Plex Mono",monospace;color:var(--sub)}
+.btn{font:600 11px "IBM Plex Mono",monospace;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);background:var(--panel2);border:1px solid var(--hair);border-radius:5px;padding:6px 10px;text-decoration:none;cursor:pointer}
+.btn:hover{border-color:var(--yel);color:var(--yel)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--yel);display:inline-block}
+.dot.live{background:var(--green)} .dot.err{background:#ff7a59}
+.links{font:500 11px "IBM Plex Mono",monospace;color:var(--sub);margin:0 0 12px;display:flex;gap:14px;flex-wrap:wrap}
+.links a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--sub)}
+.links a:hover{color:var(--yel)}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.head h2{font:800 15px "Barlow Condensed",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;margin:0}
+.kpi{font:500 11px "IBM Plex Mono",monospace;color:var(--sub)} .kpi b{color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.chip{display:flex;flex-direction:column;gap:7px;background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:10px 12px}
+.chip.completa{border-color:rgba(51,212,136,.5)} .chip.incompleta{border-color:rgba(250,189,18,.4)}
+.code{display:flex;justify-content:space-between;align-items:center;font:500 11px "IBM Plex Mono",monospace;color:var(--sub)}
+.badge{font:700 9px "IBM Plex Mono",monospace;letter-spacing:.05em;padding:2px 8px;border-radius:20px;cursor:pointer;background:none}
+.completa .badge{background:rgba(51,212,136,.16);color:var(--green);border:1px solid rgba(51,212,136,.5)}
+.incompleta .badge{background:rgba(250,189,18,.16);color:var(--yel);border:1px solid rgba(250,189,18,.5)}
+.badge:hover{filter:brightness(1.25)}
+.name{font:700 15px/1.15 "Barlow Condensed",Arial,sans-serif;text-transform:uppercase}
+.resp{font-size:11px;color:var(--sub)}
+.meta{font:500 10px "IBM Plex Mono",monospace;color:var(--sub)}
+.nota{font-size:12px;color:var(--ink);background:var(--panel2);border-left:3px solid var(--yel);padding:5px 8px;border-radius:0 4px 4px 0}
+.acts{display:flex;flex-direction:column;gap:5px;margin-top:auto}
+.pdf{display:block;text-align:center;text-decoration:none;font:600 10px "IBM Plex Mono",monospace;letter-spacing:.04em;text-transform:uppercase;padding:6px;border-radius:4px;border:1px solid var(--hair);color:var(--ink);background:var(--panel2)}
+.pdf.doss{background:rgba(127,184,217,.18);border-color:rgba(127,184,217,.6);color:#cfe8f6}
+.pdf.ubic{background:rgba(250,189,18,.12);border-color:rgba(250,189,18,.55);color:#ffd766}
+.pdf.off{opacity:.45;pointer-events:none}
+.pdf:hover{filter:brightness(1.2)}
+.edit{background:none;border:0;color:var(--sub);font:600 10px "IBM Plex Mono",monospace;text-transform:uppercase;cursor:pointer;padding:0;text-align:left}
+.edit:hover{color:var(--yel)}
+.nedit{display:flex;flex-direction:column;gap:5px}
+.nedit textarea{width:100%;min-height:60px;background:var(--panel2);color:var(--ink);border:1px solid var(--hair);border-radius:4px;font:13px "IBM Plex Sans",Arial,sans-serif;padding:6px}
+.nedit div{display:flex;gap:6px}
+.empty{padding:24px;text-align:center;color:var(--sub);border:1px dashed var(--hair);border-radius:8px}
+footer{margin-top:14px;padding-top:10px;border-top:1px solid var(--hair);font:500 10px "IBM Plex Mono",monospace;color:#6f757c;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+</style>
+</head><body>
+<div class="wrap">
+ <div class="bar">
+  <div class="bar-l"><a href="../" title="Menú"><span class="mb-logo"></span></a><h1>Gestión de áreas</h1></div>
+  <div class="bar-r"><span class="dot" id="dot"></span><span id="sync">Esperando la clave…</span><button class="btn" id="refresh" type="button">Actualizar</button><a class="btn" href="../">← Menú</a><button class="btn" id="salir" type="button">Salir</button></div>
+ </div>
+ <p class="links"><a href="https://drive.google.com/drive/folders/1E1BNuR-4-WwkCFvjWJrsDNHmBKVMVmPg" target="_blank" rel="noopener">Dossiers (Drive)</a><a href="https://drive.google.com/drive/folders/1empEVpAXUM5C3rJNw66w3KLW2oBK0Rmj" target="_blank" rel="noopener">Ubicaciones</a><a href="https://drive.google.com/drive/folders/1fGfZfJzjZMj1zNsWXErCtUzzNnMI91gt" target="_blank" rel="noopener">Esquemas</a><a href="https://drive.google.com/drive/folders/1EiVlhbELN45tNQLrL6tINmVV1LQuR_JB" target="_blank" rel="noopener">Mapas</a></p>
+ <div class="head"><h2>Estado de cada área</h2><span class="kpi" id="kpi"></span></div>
+ <div class="grid" id="grid"><p class="empty">Cargando…</p></div>
+ <footer><span>Toca COMPLETA / INCOMPLETA para cambiarlo · lo ve todo el equipo al momento · datos en la hoja «DATA App Monegrosbook» › WEB_AREAS</span><span>MonegrosBook · 6-7 nov 2026 · Operado por XG Concept</span></footer>
+</div>
+<script src="../assets/mb.js"></script>
+<script>
+(function(){
+ var areas=[], editing=null, lastTs=null, busy=false;
+ var D=function(id){return 'https://drive.google.com/file/d/'+id+'/view';};
+ var $=function(s){return document.querySelector(s);}, esc=MB.esc;
+ function state(a){ if(a.estado==='completa'||a.estado==='incompleta') return a.estado; return a.dossier_estado==='cerrado'?'completa':'incompleta'; }
+ function setSync(k,t){$('#dot').className='dot'+(k?' '+k:'');$('#sync').textContent=t;}
+ function render(){
+  if(!areas.length){$('#grid').innerHTML='<p class="empty">Sin áreas.</p>';return;}
+  var n=areas.filter(function(a){return state(a)==='completa';}).length;
+  $('#kpi').innerHTML='<b>'+n+'</b> completas · '+(areas.length-n)+' incompletas · '+areas.length+' áreas';
+  $('#grid').innerHTML=areas.map(function(a){
+   var st=state(a);
+   var doss=a.dossier_drive?'<a class="pdf doss" href="'+D(a.dossier_drive)+'" target="_blank" rel="noopener">Ver PDF '+esc(a.dossier_ver||'')+'</a>':'<span class="pdf off">Sin dossier</span>';
+   var ubic=a.ubic_drive?'<a class="pdf ubic" href="'+D(a.ubic_drive)+'" target="_blank" rel="noopener">Ubicación '+esc(a.ubic_ver||'')+'</a>':'';
+   var nota=editing===a.codigo
+    ?'<div class="nedit"><textarea id="nt">'+esc(a.nota||'')+'</textarea><div><button class="btn" data-save="'+a.codigo+'">Guardar</button><button class="btn" data-cancel="1">Cancelar</button></div></div>'
+    :(a.nota?'<div class="nota">'+esc(a.nota)+'</div>':'')+'<button class="edit" data-edit="'+a.codigo+'">✎ '+(a.nota?'Editar nota':'Añadir nota')+'</button>';
+   return '<div class="chip '+st+'"><div class="code"><span>'+esc(a.codigo)+'</span><button class="badge" data-tog="'+a.codigo+'" title="Cambiar estado">'+(st==='completa'?'COMPLETA':'INCOMPLETA')+'</button></div>'+
+    '<div class="name">'+esc(a.nombre)+'</div><div class="resp">'+esc(a.responsable||'')+'</div>'+
+    '<div class="meta">Dossier '+esc(a.dossier_ver||'—')+' · '+esc(a.dossier_estado||'')+(a.actualizado?' · '+esc(a.actualizado):'')+'</div>'+
+    nota+'<div class="acts">'+doss+ubic+'</div></div>';
+  }).join('');
+ }
+ async function load(manual){
+  if(busy||editing) return; busy=true;
+  try{ var j=await MB.call('areas'); areas=j.areas||[]; lastTs=j.ts; setSync('live','Al día '+MB.hm(lastTs)); render(); if(manual) MB.toast('Actualizado'); }
+  catch(e){ if(e.code==='clave'){MB.logout();return;} setSync('err','Sin conexión'+(lastTs?' · datos de '+MB.hm(lastTs):'')); }
+  finally{busy=false;}
+ }
+ async function save(codigo,fields,msg){
+  var a=areas.filter(function(x){return x.codigo===codigo;})[0]; if(a) Object.assign(a,fields); render();
+  try{ var j=await MB.call('area.set',{codigo:codigo,fields:fields}); areas=j.areas; lastTs=j.ts; setSync('live','Al día '+MB.hm(lastTs)); render(); MB.toast(msg||'Guardado'); }
+  catch(e){ MB.toast('No se ha guardado. Prueba otra vez.'); editing=null; load(); }
+ }
+ document.addEventListener('click',function(ev){
+  var t=ev.target.closest('button'); if(!t) return;
+  if(t.id==='refresh'){load(true);return;}
+  if(t.id==='salir'){MB.logout();return;}
+  if(t.dataset.tog){var a=areas.filter(function(x){return x.codigo===t.dataset.tog;})[0];var nx=state(a)==='completa'?'incompleta':'completa';save(a.codigo,{estado:nx},a.codigo+' → '+nx);return;}
+  if(t.dataset.edit){editing=t.dataset.edit;render();var ta=$('#nt');if(ta)ta.focus();return;}
+  if(t.dataset.cancel){editing=null;render();return;}
+  if(t.dataset.save){var c=t.dataset.save,v=$('#nt').value.trim();editing=null;save(c,{nota:v},'Nota guardada');return;}
+ });
+ MB.gate({need:'gestion',title:'Gestión de áreas'}).then(function(){ load(); MB.poll(load,30000); });
+})();
+</script>
+</body></html>
