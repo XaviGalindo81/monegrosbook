@@ -1,6 +1,7 @@
 <!doctype html><html><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>MonegrosBook · Tablón del equipo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/mb.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap">
 <style>html,body{margin:0}
 
@@ -257,7 +258,7 @@ table.vac td{padding:8px 12px;border-top:1px solid var(--hair);vertical-align:mi
 :root[data-theme="dark"] .tab.on .tgo{background:#141413;color:var(--acc)}
 @media print{.tabs,.tabs-k,.find,.lockbar{display:none!important} .panel[data-panel="areas"][hidden]{display:block!important} .panel[data-panel="horario"]{display:none!important}}
 </style>
-<div class="bar"><div class="in"><img src="data:image/png;base64,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" alt="MonegrosBook"><span class="sep"></span><a href="../" style="font:700 11px var(--fm);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:1.3px solid var(--ink);border-radius:4px;padding:4px 8px;white-space:nowrap">← Menú</a><span class="nm">MonegrosBook · <em>Tablón del equipo</em></span><span class="rv"><span>Actualizado </span><b>plantilla v1</b> · 24/09/2026</span></div></div>
+<div class="bar"><div class="in"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAABACAMAAAD8r6OuAAAAwFBMVEUMNFgIGywKLWHfrhAUGx0MNVsEXGrpshGUdAv95J/ksRD7xS6wig3bqhAPQnFuWAb81WsA///+8c+wig4AAP8OQW/3whFhSwiYcwpTKAT7xBKfewwNNlxsbGz9zhG4qh3/AAAEWapLOQYRS4AAf///fwAJJDyhAAD//3////8AM5lVqlV//3+qqlUAAAD6vBAPRHT+/vv9xBH//wAOPWgDBAYOO2UKKUYPQW8OQW/qthEMNVoPQnH7qgH7zEn3xRL3qvZFAAAAQHRSTlOXWRqhJmENHmb/YfmS0W8p/wH/agGuqkwkK2mDyQIiEAEDQ/4CAowEAgEFAwIDAP37//sB6yzQcVDR0LCTBf6OFelM7gAABnhJREFUeNrtWYly2zgMlUjqtiInsh07d9Ns271g+ZBkyYn9/3+1AEj66DZbZybazOwsJ6ZAAMQjDlLUxIHT2l0QvAT7xvT90QjbibbAOUlrAVfzgzadJwn27Y6RJG3SzmPUe1fQLSIR3HS6R+bhwfj6fT19IdCftXn43p7KE0B7/wHQ08Lbe++cjv79nH4Q6PZDQZOkf4S0SZLOQHfVG2FLdpibi34Ude5pMrtIZjPrbDSbIaPzQkKYDf4uEnYT4fvI6GqfWtDZbBZtsJv1k4geCTE6Phz6BEQemhYxI+n2GLzYI832+FEnJ5IF3WioZOeoZXR5DEYaox9ZRy2DQa87KSTr4YVx8GLH6PB9Gs2OPezvktvvrJDms+9ymewZnW2ZfdHqqj2oYiql9/eUcspAyR5vc8jowlMM78aWaaQjGx0zOqheBI1m9vWCvuGu2Rwxog6qdztPZgcv0uhig/vmiPHunlL1bpLDl/dmk3zHSD7qCvoBN/wPuYJef8QV9Pr/e2+X1duJp/PXGwq7OBx2DqVpevScph0VEjZ1ie1xopQqlZpMHlVZlsR75DE+Hx/V6fvU932mBprwP33isW97X7fTzJGmMKQxxIRg+1rh756y3kD8KMS/8+P2wbr+ALeaky1u93PpOcBOWMo/kmlPxWq1YgUh+OmfndFDMJd638Pe83Dkr84M01vhGJcmVlqbCCMiiYY5O/MtwTIhFCmQp35RFA48gd8URQXwjMNiKGBFXDgrCq/QzdGiRhCTmgekRBKlWY1nRDhdCGPoyfA8mq5gWBRrA7rEEhAFgaLGckkE2SNjy1pDfHYIHUUN61RIeTRlaYmKJjxr5UoRxN7QUsuWJQ6WrsLwkparV11BU9y4ykEVj51DUBfZTl07LlplUe2RvmoKWsa6RLmD3C+Ao9pBfVL0FInYEPrmlB4rLd2GobSnFEkUoh6TnrZcLA0oFxui3JQYD3bZfQIH18ImhkW1JkI4lYuGS5ruKJsdd0gspUFxOTfluQWtgB9r1hUrA0q9Bj0XpIDZEI7jesdYz4zecPkgXTIUxq8GgVTdEKhoOBw6uBp0ydHGNGlQLiIG5ZBQiTQN5W0NnwRw1TirZx1Vl4A4bMWzgHPiUjZLz6bMaWgdGKa1Y/JoQBEOA7OuirVrQclTqgMNinVE61lzDjxTzzclwTEoZ48qdGgKCXagNYMKC1rzhmXQ9WenKvCvcg89XfP8Wpeow6DkEYlwmYi3B8U6IJseebqudD3XnFPtKVjQQunDoeCc4MoaHV41MJ5y0Aj0i+tSCaEYF6ZF+PMGCOEOBIGK37j8OB0Uy8o7yulAe7q8IZ/M4XDjcoox2SVXi7FKPwblROC8yoqWijP8bHKKFUUF3hhQJEzIdtVrZZwDX4OWnCINWinRGFBhQNcrOiqHFLWhAeXzhXwTvo6cRzVP3rh0FlHIjCErw6xwfeHBoXNKuXJogWCPlJK98ExOC1s/FHANKvRm5MarY8KxhDV0Y45KBsT9wkBPnFMdKAIVPK0yRUIhrXd29EYzoFSoStDZV3zh84CPGF29FGIxNIbAazTrjHc115LjezXSNZVKTcnz8MTDJDCHe6+ua9etSy1yvVJ4pCfqWlHR0uwBqNpx2AQplzDYGwIoa6c+sIjTXrk50H87Fgvu8feA3Ti4B5h8XRDnAV74YnL7Tb9p71H0AJNvrIvjX18WyIGvk8H3b9KBvTngYQjn2A3OB0ydazm/mG9/RQ4Rf9CAqD/BrETzrfZBO5yvX6iaw6oD6n/kKTpytY0huNqiq1cBxNuYO81eUBePg1jB3TbO7iFAEancIbEN4nuIcWacAemdfjH7Be6mYZvLnmzHwVTCSMr2vr1uw22aT/OrNG9jGUr8XLpqU8xrkIao25PYenk4b6HNWxzF0zx/Gyia7aUAMo9lqrYhIKxsL1sXcEydnPYw78G8l90hqAwkQ8pUjmUay1yW0IatHL9yJ30FNE3lpJ3AKJTpNJQ5jHrtJQKHsO2lOVyRWxm8bK/bNoNg2iO1x7gne+FYXrYYJFx2qWIULt4CWrahbEcyTFVOXkqFnoZ5O0rR1CidyMtYqgVKUgSlkGCEY/I0bssYc4PK4Uim6i2X7SCDcQZhWGIPWRZeljAOL5EMS92NFYQKxrmbIWimFmOagIphlinI1DicoDAs33jDz3hfLHjfHXxd2A7+4Qvi598WfwF1RLRY9XKFRgAAAABJRU5ErkJggg==" alt="MonegrosBook"><span class="sep"></span><a href="../" style="font:700 11px var(--fm);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:1.3px solid var(--ink);border-radius:4px;padding:4px 8px;white-space:nowrap">← Menú</a><span class="nm">MonegrosBook · <em>Tablón del equipo</em></span><span class="rv"><span>Datos </span><b id="live">conectando…</b></span></div></div>
 <main class="wrap">
  <div class="hero">
   <div>
@@ -324,21 +325,23 @@ table.vac td{padding:8px 12px;border-top:1px solid var(--hair);vertical-align:mi
 <script>
 (function(){
  var q=document.getElementById('q'),cnt=document.getElementById('cnt'),none=document.getElementById('none');
- var cards=[].slice.call(document.querySelectorAll('.card')),rows=[].slice.call(document.querySelectorAll('#mxb tr'));
- var tiles=[].slice.call(document.querySelectorAll('.atile')),grps=[].slice.call(document.querySelectorAll('.grp')),CODES={};
- cards.forEach(function(c){var o={};[].forEach.call(c.querySelectorAll('[data-code]'),function(b){o[b.dataset.code]=1;});CODES[c.id]=Object.keys(o);});
+ var cards,rows,tiles=[].slice.call(document.querySelectorAll('.atile')),grps=[].slice.call(document.querySelectorAll('.grp')),CODES;
+ function collect(){cards=[].slice.call(document.querySelectorAll('.card'));rows=[].slice.call(document.querySelectorAll('#mxb tr[data-n]'));CODES={};
+ cards.forEach(function(c){var o={};[].forEach.call(c.querySelectorAll('[data-code]'),function(b){o[b.dataset.code]=1;});CODES[c.id]=Object.keys(o);});}
+ collect();
  tiles.forEach(function(t){var ac=t.querySelector('.ac'),ap=t.querySelector('.ap');t.dataset.code=ac?ac.textContent.trim():'';t.dataset.p=ap?ap.textContent:'';});
  var asub=document.querySelector('#areas .sh small'),asub0=asub?asub.textContent:'';
  function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
  function run(){var v=norm(q.value.trim()),n=0;
   cards.forEach(function(c){var hit=!v||norm(c.dataset.n).indexOf(v)>-1;c.hidden=!hit;if(hit)n++;});
   rows.forEach(function(r){r.hidden=!(!v||norm(r.dataset.n).indexOf(v)>-1);});
-  none.hidden=n>0;cnt.textContent=v?(n+(n===1?' persona':' personas')):("0 personas");
+  none.hidden=!v||n>0;cnt.textContent=v?(n+(n===1?' persona':' personas')):(cards.length+(cards.length===1?' persona':' personas'));
   var codes={};cards.forEach(function(c){if(!c.hidden)(CODES[c.id]||[]).forEach(function(k){codes[k]=1;});});
   tiles.forEach(function(t){var hit=!v||codes[t.dataset.code]||norm(t.dataset.p).indexOf(v)>-1;t.hidden=!hit;});
   grps.forEach(function(g){g.hidden=!g.querySelector('.atile:not([hidden])');});
   if(asub)asub.textContent=v?(n?'solo las áreas donde está quien buscas':'ningún área coincide'):asub0;
   try{localStorage.setItem('monegrosbook-q',q.value);}catch(e){}}
+ window.MBsearch=function(){collect();run();};
  q.addEventListener('input',run);
  try{var s=localStorage.getItem('monegrosbook-q');if(s){q.value=s;run();}}catch(e){}
 })();
@@ -468,6 +471,50 @@ table.vac td{padding:8px 12px;border-top:1px solid var(--hair);vertical-align:mi
  var h=(location.hash||'').replace('#','');showTab(['horario','areas','personas'].indexOf(h)>-1?h:'personas');
 })();
 
+</script>
+
+<script src="../assets/mb.js"></script>
+<script>
+(function(){
+ var DAY={pre:['PREV','previos'],vie:['VIE','6 nov'],sab:['SÁB','7 nov'],dom:['DOM','8 nov'],all:['TODO','el evento']};
+ var COLS=[['pre','Previos','antes'],['vie','Viernes','6 nov'],['sab','Sábado','7 nov'],['dom','Domingo','8 nov']];
+ var ORD={pre:0,vie:1,sab:2,dom:3,all:4}, esc=MB.esc;
+ function lockHtml(c){var b=document.querySelector('.atile .pdf[data-code="'+c+'"]');return b?b.innerHTML:'<span class="lbl">Dossier PDF</span>';}
+ function build(d){
+  var A={};(d.areas||[]).forEach(function(a){A[a.c]=a;});
+  var P={};
+  function person(n){var k=MB.slug(n);return P[k]=P[k]||{id:k,nombre:n,items:[],conf:true};}
+  (d.areas||[]).forEach(function(a){String(a.r||'').split(/\s*\/\s*/).forEach(function(n){if(n&&n.length>2){var x=person(n);x.items.push({area:a.c,dia:'all',resp:true});}});});
+  (d.people||[]).forEach(function(v){var x=person(v.nombre);if(!v.confirmado)x.conf=false;v.items.forEach(function(i){x.items.push({area:i.area,dia:i.dia,conf:v.confirmado});});});
+  var L=Object.keys(P).map(function(k){return P[k];}).sort(function(a,b){return a.nombre.localeCompare(b.nombre,'es');});
+  document.querySelector('table.mx thead tr').innerHTML='<th scope="col">Nombre</th>'+COLS.map(function(c){return '<th scope="col" class="'+(c[0]==='vie'||c[0]==='sab'?'sab':'')+'">'+c[1]+'<small>'+c[2]+'</small></th>';}).join('');
+  var mxb=document.getElementById('mxb');
+  mxb.innerHTML=L.length?L.map(function(p){
+   return '<tr data-n="'+esc(p.nombre)+'"><th scope="row"><a href="#'+p.id+'">'+esc(p.nombre)+'</a></th>'+COLS.map(function(c){
+    var it=p.items.filter(function(i){return i.dia===c[0]||i.dia==='all';});
+    if(!it.length) return '<td class="'+(c[0]==='vie'||c[0]==='sab'?'sab':'')+'"></td>';
+    var ok=it.some(function(i){return i.resp||i.conf;});
+    return '<td class="'+(c[0]==='vie'||c[0]==='sab'?'sab':'')+'" title="'+esc(it.map(function(i){return i.area;}).join(', '))+'"><i class="d '+(ok?'ok':'pd')+'"></i></td>';}).join('')+'</tr>';}).join('')
+   :'<tr><td colspan="5" style="text-align:center;color:var(--sub);padding:18px">Todavía no hay nadie asignado.</td></tr>';
+  document.querySelector('.legend').innerHTML='<span><i class="d ok"></i>Confirmado</span><span><i class="d pd"></i>Asignado, por confirmar</span>';
+  document.getElementById('cards').innerHTML=L.length?L.map(function(p){
+   var its=p.items.slice().sort(function(a,b){return ORD[a.dia]-ORD[b.dia]||a.area.localeCompare(b.area);});
+   var allOk=its.every(function(i){return i.resp||i.conf;});
+   return '<article class="card" id="'+p.id+'" data-n="'+esc(p.nombre)+'"><header><h3>'+esc(p.nombre)+'</h3><span class="st '+(allOk?'ok':'pend')+'">'+(allOk?'Confirmado':'Por confirmar')+'</span></header><ol>'+
+    its.map(function(i){var a=A[i.area]||{n:i.area,g:''},dd=DAY[i.dia]||['—',''],pend=!(i.resp||i.conf);
+     return '<li class="shift'+(pend?' pend':'')+'"><div class="dy"><b>'+dd[0]+'</b><span>'+dd[1]+'</span></div><div class="tm"><div class="time word tbc">'+(i.dia==='all'?'Todo el evento':'Hora por confirmar')+'</div></div>'+
+      '<div class="wh"><span class="ar">'+esc(i.area)+' · '+esc(a.n)+'</span><span class="cg">'+(i.resp?'Responsable del área':'Voluntario')+'</span>'+(a.g?'<div class="lk"><button type="button" class="pdf" data-code="'+esc(i.area)+'" data-g="'+esc(a.g)+'">'+lockHtml(i.area)+'</button></div>':'')+'</div></li>';}).join('')+'</ol></article>';}).join('')
+   :'<p class="empty" style="display:block">Todavía no hay nadie asignado.</p>';
+  if(window.MBsearch) window.MBsearch();
+  var lv=document.getElementById('live'); if(lv) lv.textContent='en vivo · '+MB.hm(d.ts);
+ }
+ var busy=false;
+ async function load(){ if(busy) return; busy=true;
+  try{ build(await MB.call('tablon')); }
+  catch(e){ if(e.code==='clave'){MB.logout();return;} var lv=document.getElementById('live'); if(lv) lv.textContent='sin conexión'; }
+  finally{busy=false;} }
+ MB.gate({need:'any',title:'¿Cuándo me toca?',label:'Clave de voluntarios'}).then(function(){ load(); MB.poll(load,60000); });
+})();
 </script>
 
 </body></html>
