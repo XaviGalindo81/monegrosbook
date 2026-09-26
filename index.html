@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MonegrosBook · Panel del equipo</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=IBM+Plex+Mono:wght@500;700&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+:root{--ground:#ecebe5;--paper:#fff;--ink:#141413;--sub:#5d5b53;--hair:rgba(20,20,19,.14);--acc:#0F4270;--acc-soft:rgba(15,66,112,.08);--amarillo:#FABD12;
+--ft:"Barlow Condensed","Arial Narrow",Arial,sans-serif;--fm:"IBM Plex Mono",ui-monospace,monospace;--fx:"IBM Plex Sans",system-ui,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#121211;--paper:#1c1b19;--ink:#f1efe8;--sub:#a9a69c;--hair:rgba(241,239,232,.14);--acc:#FABD12;--acc-soft:rgba(250,189,18,.12)}}
+:root[data-theme="dark"]{--ground:#121211;--paper:#1c1b19;--ink:#f1efe8;--sub:#a9a69c;--hair:rgba(241,239,232,.14);--acc:#FABD12;--acc-soft:rgba(250,189,18,.12)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:15px/1.45 var(--fx)}
+.bar{background:var(--paper);border-bottom:1px solid var(--ink)}
+.bar .in{max-width:1000px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px}
+.bar img{height:26px;background:#fff;border-radius:6px;padding:3px 6px}
+.bar .nm{font:800 19px var(--ft);letter-spacing:.03em;text-transform:uppercase}
+.bar .nm em{font-style:normal;color:var(--acc)}
+main{max-width:1000px;margin:0 auto;padding:28px 16px 48px}
+.eyebrow{font:500 11px var(--fm);letter-spacing:.16em;text-transform:uppercase;color:var(--sub);margin:0 0 6px}
+h1{font:800 clamp(40px,8vw,72px)/.9 var(--ft);text-transform:uppercase;margin:0}
+h1 span{color:var(--acc)}
+.lead{color:var(--sub);max-width:52ch;margin:12px 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.tile{display:flex;flex-direction:column;gap:8px;background:var(--paper);border:2px solid var(--ink);border-radius:10px;box-shadow:0 4px 0 var(--ink);padding:16px;text-decoration:none;color:inherit;transition:transform .12s,box-shadow .12s,border-color .12s}
+a.tile:hover,a.tile:focus-visible{border-color:var(--acc);box-shadow:0 4px 0 var(--acc);transform:translateY(-2px);outline:none}
+.tile .ic{width:40px;height:40px;padding:8px;border-radius:50%;background:var(--acc-soft);fill:none;stroke:var(--acc);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tile b{font:800 24px/1 var(--ft);text-transform:uppercase;letter-spacing:.02em}
+.tile small{color:var(--sub);font-size:13.5px}
+.tile .go{margin-top:auto;align-self:flex-start;font:700 10.5px var(--fm);letter-spacing:.06em;text-transform:uppercase;border-radius:20px;padding:5px 10px;background:var(--ink);color:var(--paper)}
+.tile.soon{border-style:dashed;box-shadow:none;opacity:.65}
+.tile.soon .go{background:transparent;color:var(--sub);border:1.3px dashed var(--sub)}
+.foot{margin-top:30px;padding-top:12px;border-top:1px solid var(--hair);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:500 10.5px var(--fm);letter-spacing:.05em;text-transform:uppercase;color:var(--sub)}
+</style></head><body>
+<div class="bar"><div class="in"><img src="data:image/png;base64,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" alt="MonegrosBook"><span class="nm">MonegrosBook · <em>Panel del equipo</em></span></div></div>
+<main>
+ <p class="eyebrow">Proyecto: MonegrosBook · Fraga · 6-7 noviembre 2026</p>
+ <h1>Panel del <span>equipo</span></h1>
+ <p class="lead">Elige qué quieres consultar o gestionar.</p>
+ <nav class="grid" aria-label="Herramientas">
+  <a class="tile" href="cuando-me-toca/"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2.1"/></svg><b>¿Cuándo me toca?</b><small>Tus horas, el horario general y los dossiers de área.</small><span class="go">Abrir →</span></a>
+  <div class="tile soon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><b>Gestión de áreas</b><small>Las 21 áreas: responsables, personal y estado.</small><span class="go">Próximamente</span></div>
+  <div class="tile soon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.6c2.2.6 3.5 2.4 3.5 5.4"/></svg><b>Voluntarios</b><small>Quién está, dónde y cuándo.</small><span class="go">Próximamente</span></div>
+  <div class="tile soon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20V9l9-6 9 6v11"/><path d="M9 20v-6h6v6"/></svg><b>Alojamiento</b><small>Reservas y habitaciones del equipo.</small><span class="go">Próximamente</span></div>
+ </nav>
+ <div class="foot"><span>MonegrosBook · Panel del equipo</span><span>Operado por XG Concept</span></div>
+</main>
+</body></html>
