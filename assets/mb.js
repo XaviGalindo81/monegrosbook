@@ -5,12 +5,37 @@ var LS = 'mb_key';
 function getKey() { try { return localStorage.getItem(LS) || ''; } catch (e) { return ''; } }
 function setKey(k) { try { k ? localStorage.setItem(LS, k) : localStorage.removeItem(LS); } catch (e) {} }
 
+// Llamadas a la API (28/09): las lecturas van por GET y las escrituras por POST.
+// Google (Apps Script) a veces tarda o devuelve una página de error aunque el script haya
+// terminado bien: cada llamada tiene tiempo límite y se reintenta sola.
+var MB_GET = { login: 1, tablon: 1, areas: 1, vol: 1, aloj: 1 };
+function mbPlano(o) { for (var k in o) { var v = o[k]; if (v !== null && typeof v === 'object') return false; } return true; }
+function mbFetch(url, opt, ms) {
+  var c = new AbortController(); var t = setTimeout(function () { c.abort(); }, ms);
+  return fetch(url, Object.assign({ signal: c.signal, redirect: 'follow' }, opt || {})).finally(function () { clearTimeout(t); });
+}
+async function mbIntento(action, body) {
+  var r;
+  if (MB_GET[action] && mbPlano(body)) {
+    var q = Object.keys(body).map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(body[k] == null ? '' : body[k]); }).join('&');
+    r = await mbFetch(API + '?' + q, { method: 'GET', cache: 'no-store' }, 12000);
+  } else {
+    r = await mbFetch(API, { method: 'POST', body: JSON.stringify(body) }, 30000);
+  }
+  var tx = await r.text();
+  try { return JSON.parse(tx); } catch (e) { throw new Error('red'); }
+}
 async function call(action, data) {
-var body = Object.assign({ action: action, key: getKey() }, data || {});
-var r = await fetch(API, { method: 'POST', body: JSON.stringify(body), redirect: 'follow' });
-var j = await r.json();
-if (!j.ok) { var e = new Error(j.msg || j.error || 'error'); e.code = j.error; throw e; }
-return j;
+  var body = Object.assign({ action: action, key: getKey() }, data || {});
+  var reintentos = (action === 'aloj.add' || action === 'area.load') ? 0 : 3;
+  var j = null, last = null;
+  for (var i = 0; i <= reintentos; i++) {
+    try { j = await mbIntento(action, body); break; }
+    catch (e) { last = e; if (i < reintentos) await new Promise(function (res) { setTimeout(res, 600 * (i + 1)); }); }
+  }
+  if (!j) throw last;
+  if (!j.ok) { var e = new Error(j.msg || j.error || 'error'); e.code = j.error; throw e; }
+  return j;
 }
 
 function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
